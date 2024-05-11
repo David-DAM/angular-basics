@@ -1,0 +1,25 @@
+<section>
+  <div>
+    <p>Hola desde angular, soy {{ name }}</p>
+  </div>
+  <input type="text" [contentEditable]="name">
+  <div>
+    <p>My hobbies are:</p>
+    <ol>
+    @for (hobbie of hobbies; track hobbie){
+      <li (click)="removeHobbie(hobbie)">{{ hobbie }}</li>
+    }
+    </ol>
+  </div>
+  @if (isLogged){
+    <p>El usuario está logeado</p>
+  } @else {
+    <p>El usuario no está logeado</p>
+  }
+  <button type="button"(click)="changeLoggedStatus()">Cambiar estado</button>
+  <div>
+    <p>My age is {{ age }}</p>
+    <button (click)="incrementAge()">Increment age</button>
+  </div>
+</section>
+<router-outlet></router-outlet>
